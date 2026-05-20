@@ -13,22 +13,22 @@ const config: Config = {
         sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial"]
       },
       boxShadow: {
-        soft: "0 20px 55px rgba(15, 23, 42, 0.08)",
-        premium: "0 20px 40px rgba(56, 189, 248, 0.08), 0 6px 18px rgba(15, 23, 42, 0.06)"
+        soft: "0 20px 55px rgba(7, 26, 63, 0.06)",
+        premium: "0 20px 40px rgba(14,165,164,0.08), 0 6px 18px rgba(7,26,63,0.06)"
       },
       colors: {
         primary: {
-          DEFAULT: "#2563EB",
-          50: "#eef7ff",
-          100: "#d9ecff",
-          500: "#2563eb",
-          600: "#1d4ed8"
+          DEFAULT: "#0EA5A4",
+          50: "#E6FBFA",
+          100: "#CFF7F6",
+          500: "#0ea5a4",
+          600: "#0b8f8e"
         },
         sky: {
-          DEFAULT: "#38BDF8"
+          DEFAULT: "#0369A1"
         },
         navy: {
-          DEFAULT: "#0F172A"
+          DEFAULT: "#071A3F"
         },
         bg: {
           DEFAULT: "#F8FAFC"
