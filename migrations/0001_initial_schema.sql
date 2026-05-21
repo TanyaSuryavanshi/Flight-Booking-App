@@ -176,13 +176,20 @@ $$;
 
 -- RPC function to cancel a booking atomically, releasing the reserved seat.
 create or replace function cancel_booking(booking_uuid uuid)
-  returns bookings
-  language plpgsql security definer as $$
+returns bookings
+language plpgsql
+security definer
+as $$
 declare
   booking_record bookings%rowtype;
   current_seat seats%rowtype;
 begin
-  select * into booking_record from bookings where id = booking_uuid for update;
+  select *
+  into booking_record
+  from bookings
+  where id = booking_uuid
+  for update;
+
   if not found then
     raise exception 'Booking not found.';
   end if;
@@ -191,15 +198,30 @@ begin
     raise exception 'Booking is already cancelled.';
   end if;
 
-  select * into current_seat from seats where id = booking_record.seat_id for update;
+  select *
+  into current_seat
+  from seats
+  where id = booking_record.seat_id
+  for update;
+
   if not found then
     raise exception 'Seat not found for booking.';
   end if;
 
-  update bookings set status = 'cancelled' where id = booking_record.id;
-  update seats set is_available = true where id = current_seat.id;
+  update bookings
+  set status = 'cancelled'
+  where id = booking_record.id;
 
-  return (select * from bookings where id = booking_record.id);
+  update seats
+  set is_available = true
+  where id = current_seat.id;
+
+  select *
+  into booking_record
+  from bookings
+  where id = booking_record.id;
+
+  return booking_record;
 end;
 $$;
 
