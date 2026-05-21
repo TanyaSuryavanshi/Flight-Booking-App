@@ -538,6 +538,8 @@ Consider adding:
 - **PostHog** – Product analytics
 
 ---
+<h2>Lighthouse Audit</h2>
+<img width="678" height="800" alt="image" src="https://github.com/user-attachments/assets/d76da854-d54a-4133-bb06-c5cbedc3cacd" />
 
 ## Contributing
 
