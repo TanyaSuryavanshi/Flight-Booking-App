@@ -14,12 +14,12 @@ export default async function SearchPage() {
 
     const { data: originData } = await supabase
       .from("flights")
-      .select("origin", { distinct: true })
+      .select("origin")
       .order("origin", { ascending: true });
 
     const { data: destinationData } = await supabase
       .from("flights")
-      .select("destination", { distinct: true })
+      .select("destination")
       .order("destination", { ascending: true });
 
     origins = (originData as { origin: string }[] | null)?.map((row) => row.origin) ?? [];
