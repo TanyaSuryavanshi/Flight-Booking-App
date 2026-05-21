@@ -272,7 +272,7 @@ fee_charged DECIMAL
 
 ## Deployment
 
-### Option 1: Vercel (Recommended)
+### Vercel 
 
 **Easiest deployment for Next.js apps:**
 
@@ -302,92 +302,7 @@ fee_charged DECIMAL
 
 ---
 
-### Option 2: Self-Hosted (Node.js + Docker)
 
-**For full control or custom infrastructure:**
-
-#### Build for Production
-
-```bash
-npm run build
-npm start
-```
-
-Server runs on `:3000` by default.
-
-#### Docker Deployment
-
-1. **Create `Dockerfile`:**
-
-```dockerfile
-FROM node:18-alpine
-
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci --omit=dev
-
-# Copy source
-COPY . .
-
-# Build Next.js app
-RUN npm run build
-
-# Expose port
-EXPOSE 3000
-
-# Start server
-CMD ["npm", "start"]
-```
-
-2. **Build and run:**
-
-```bash
-docker build -t flight-app .
-docker run -p 3000:3000 \
-  -e NEXT_PUBLIC_SUPABASE_URL=<your-url> \
-  -e NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-key> \
-  flight-app
-```
-
-#### Environment Variables for Production
-
-Create `.env.production` or pass via CI/CD:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-NODE_ENV=production
-```
-
----
-
-### Option 3: Docker Compose (Full Stack)
-
-For local or staging environments with Supabase:
-
-```yaml
-version: '3.8'
-services:
-  app:
-    build: .
-    ports:
-      - "3000:3000"
-    environment:
-      NEXT_PUBLIC_SUPABASE_URL: ${SUPABASE_URL}
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY}
-      NODE_ENV: production
-```
-
-Run:
-```bash
-docker-compose up
-```
-
----
 
 ## State Management (Zustand)
 
@@ -549,33 +464,8 @@ Consider adding:
 4. Push to branch: `git push origin feature/new-feature`
 5. Open a Pull Request
 
----
 
-## License
 
-This project is licensed under the **MIT License** – see the LICENSE file for details.
-
----
-
-## Support
-
-For issues, questions, or suggestions:
-1. **GitHub Issues** – Report bugs or request features
-2. **Supabase Docs** – [supabase.com/docs](https://supabase.com/docs)
-3. **Next.js Docs** – [nextjs.org](https://nextjs.org)
-
----
-
-## Roadmap
-
-- [ ] Payment integration (Stripe)
-- [ ] Email notifications (SendGrid)
-- [ ] SMS alerts for flight changes
-- [ ] Loyalty program & miles
-- [ ] Multi-passenger bookings
-- [ ] Admin dashboard
-- [ ] Analytics & reporting
-- [ ] Mobile app (React Native)
 
 ---
 
