@@ -5,16 +5,16 @@ A production-ready flight booking application built with **Next.js 14 (App Route
 
 ## Features
 
-✈️ **Flight Search & Discovery** – Search flights by origin, destination, and departure date
-🪑 **Real-time Seat Selection** – Interactive seat map with live availability updates via Supabase Realtime
-👤 **User Authentication** – Secure sign-up and sign-in with Supabase Auth
-📋 **Booking Management** – Create, view, and cancel bookings with PNR codes
-🔄 **Reschedule Flights** – Change flight and seat with automatic fee calculation
-💾 **Persistent State** – Zustand store with localStorage persistence
-📱 **Responsive Design** – Mobile-first UI with Tailwind CSS
-🔌 **Offline Support** – PWA manifest for installable app experience
-🔐 **RLS Security** – Database-level access control with Row Level Security
-📊 **Seed Data** – Pre-populated with 8 flights and realistic seat inventory
+**Flight Search & Discovery** – Search flights by origin, destination, and departure date
+**Real-time Seat Selection** – Interactive seat map with live availability updates via Supabase Realtime
+**User Authentication** – Secure sign-up and sign-in with Supabase Auth
+**Booking Management** – Create, view, and cancel bookings with PNR codes
+**Reschedule Flights** – Change flight and seat with automatic fee calculation
+**Persistent State** – Zustand store with localStorage persistence
+**Responsive Design** – Mobile-first UI with Tailwind CSS
+**Offline Support** – PWA manifest for installable app experience
+**RLS Security** – Database-level access control with Row Level Security
+**Seed Data** – Pre-populated with 8 flights and realistic seat inventory
 
 ---
 
@@ -295,10 +295,7 @@ fee_charged DECIMAL
 
 4. **Deploy** – Vercel automatically builds and deploys on every `git push`
 
-**Vercel + Supabase Benefits:**
-- Free tier supports ~100k monthly requests
-- Automatic SSL, CDN, serverless functions
-- Built-in analytics and edge middleware
+
 
 ---
 
@@ -429,16 +426,6 @@ npm run build
 
 ---
 
-## Performance Tips
-
-1. **Image Optimization** – Use `next/image` for flight/airline logos
-2. **Code Splitting** – App Router automatically code-splits pages
-3. **Database Indexing** – Add indexes on `flights.origin`, `flights.destination`, `bookings.user_id`
-4. **Caching** – Cache flight list with `SWR` or `React Query`
-5. **PWA Caching** – Offline-first manifest with workbox
-
----
-
 ## Monitoring & Analytics
 
 ### Supabase Dashboard
@@ -469,4 +456,4 @@ Consider adding:
 
 ---
 
-**Built with ❤️ using Next.js, Supabase, and TypeScript**
+**Built with <3 using Next.js, Supabase, and TypeScript**
