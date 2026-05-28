@@ -6,14 +6,23 @@ A production-ready flight booking application built with **Next.js 14 (App Route
 ## Features
 
 **Flight Search & Discovery** – Search flights by origin, destination, and departure date
+
 **Real-time Seat Selection** – Interactive seat map with live availability updates via Supabase Realtime
+
 **User Authentication** – Secure sign-up and sign-in with Supabase Auth
+
 **Booking Management** – Create, view, and cancel bookings with PNR codes
+
 **Reschedule Flights** – Change flight and seat with automatic fee calculation
+
 **Persistent State** – Zustand store with localStorage persistence
+
 **Responsive Design** – Mobile-first UI with Tailwind CSS
+
 **Offline Support** – PWA manifest for installable app experience
+
 **RLS Security** – Database-level access control with Row Level Security
+
 **Seed Data** – Pre-populated with 8 flights and realistic seat inventory
 
 ---
